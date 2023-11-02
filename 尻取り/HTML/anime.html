@@ -169,7 +169,7 @@ def aaa(event):
         D = ('私の勝ちです!')
     # print("&lt;input value='"+D+"'&gt;")
     print(D)
-    document.getElementById("msg").innerHTML = document.getElementById("msg").innerHTML + C + "/" + D
+    document.getElementById("msg").innerHTML = document.getElementById("msg").innerHTML + C + " →　" + D
 
 click_proxy = create_proxy(aaa)
 document.getElementById("btn").addEventListener("click", click_proxy)
