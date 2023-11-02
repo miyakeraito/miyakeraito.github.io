@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+html {
+  background-color: #30D5C8;
+}
+html head audio {
+  autoplay();
+}
+html h1{
+  color: red;
+}
+body{
+  color: rgb(0, 0, 0);
+}
