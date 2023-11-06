@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>しりとりゲーム</title>
+</head>
+<body>
+    <h1>しりとりゲーム</h1>
+    <div id="game-container">
+        <p>プログラム: りんご</p>
+        <input type="text" id="user-input" placeholder="次の単語を入力">
+        <button id="submit-button">送信</button>
+    </div>
+
+    <script>
+        const words = ["りんご", "ごりん", "んまち", "ちから", "らっぱ", "ぱんだ", "だんご", "ごりん"];
+        let currentWord = words[0]; // 最初の単語
+
+        const userInputElement = document.getElementById("user-input");
+        const submitButton = document.getElementById("submit-button");
+        const gameContainer = document.getElementById("game-container");
+
+        submitButton.addEventListener("click", function() {
+            const userInput = userInputElement.value.trim();
+            if (userInput[0] === currentWord[currentWord.length - 1]) {
+                if (words.indexOf(userInput) !== -1) {
+                    // プログラムの返答を生成
+                    const programResponse = generateProgramResponse(userInput);
+
+                    // ユーザーとプログラムの単語を表示
+                    addWordToGame(userInput, "ユーザー");
+                    addWordToGame(programResponse, "プログラム");
+
+                    // ゲーム続行
+                    currentWord = programResponse;
+                } else {
+                    alert("その単語はリストにありません。");
+                }
+            } else {
+                alert("その単語は無効です。最後の文字が正しくありません。");
+            }
+
+            // 入力フィールドをクリア
+            userInputElement.value = "";
+        });
+
+        function generateProgramResponse(userWord) {
+            // プログラムの返答を生成
+            for (const word of words) {
+                if (word[0] === userWord[userWord.length - 1]) {
+                    return word;
+                }
+            }
+            return "ゲームオーバー"; // 適切な返答が見つからない場合
+        }
+
+        function addWordToGame(word, player) {
+            // プレイヤーの単語を表示
+            const wordElement = document.createElement("p");
+            wordElement.textContent = `${player}: ${word}`;
+            gameContainer.appendChild(wordElement);
+        }
+    </script>
+</body>
+</html>
