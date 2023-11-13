@@ -16,6 +16,9 @@ body {
     background-color: #fff;
     color: #000;
 }
+h1 {
+    margin-top: 0;
+}
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -84,9 +87,7 @@ main .container {
     margin: 0 auto;
     background-color: #fff;
 }
-footer {
-    background-color: #1aaedb;
-}
+
 footer .container {
     min-height: 50px;
     padding-top:10px;
