@@ -1,4 +1,11 @@
+let n = 0;
 function aaaa() {
-    document.body.style.backgroundColor = "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6,"0");
+    document.body.style.backgroundColor = `hsl(${n}deg 100%, 50%)`
+    n += 100;
+    n = n % 360
 }
-setInterval(aaaa,500);
+setInterval(aaaa,1);
+折りたたむ
+
+
+
