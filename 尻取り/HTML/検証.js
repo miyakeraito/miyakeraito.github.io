@@ -4,4 +4,4 @@ function aaaa() {
     n += 100;
     n = n % 360
 }
-setInterval(aaaa,300);
+setInterval(aaaa,100);
